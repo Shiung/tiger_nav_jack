@@ -1,0 +1,11 @@
+$maxWidth: 1180px;
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 10px;
+}

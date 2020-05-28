@@ -1,0 +1,19 @@
+.signal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  &__bar {
+    margin-left: 1px;
+    background-color: #222;
+    width: 3px;
+    height: 20px;
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        height: 2.5px + $i * 2.5;
+      }
+    }
+    &--active {
+      background-color: #fff;
+    }
+  }
+}

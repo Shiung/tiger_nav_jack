@@ -1,0 +1,36 @@
+.main {
+  position: relative;
+  // overflow-x: hidden;
+  min-height: 100vh;
+  > .nav-box {
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
+  > .page-view {
+    min-height: calc( 100vh - 60px );
+    background-color: #151515;
+    height: 800px;
+  }
+  left: 0;
+  transition: .5s;
+  @media screen and (max-width: 968px){
+    &__left {
+      left: -80px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    background-color: #000;
+    .copyright {
+      font-size: 12px;
+      margin: 0;
+      color: hsla(0,0%,40%,.502);
+      text-transform: uppercase;
+      line-height: 2.35;
+      text-align: center;
+    }
+  }
+}

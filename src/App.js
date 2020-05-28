@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import MainLayout from 'layouts/mainLayout'
 
-function App() {
+import 'styles/main.scss'
+
+const App = () => {
+  const history = createBrowserHistory()
+  useEffect(() => {
+    console.log('process.env.VERSION', process.env.VERSION)
+    console.log('process.env.VERSION', process.env.commitHEAD)
+    return () => {
+      console.log('清除')
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router history={history}>
+      <MainLayout history={history} />
+    </Router>
+  )
 }
 
-export default App;
+export default App
